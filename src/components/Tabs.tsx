@@ -3,7 +3,7 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 Image;
 //Icons
-
+import Ionicons from 'react-native-vector-icons/Ionicons';
 //Screens
 import HomeScreen from '../screens/tabs/HomeScreen';
 import SearchScreen from '../screens/tabs/SearchScreen';
@@ -33,13 +33,10 @@ const Tabs = () => {
         component={HomeScreen}
         options={{
           tabBarIcon: ({ focused }) => (
-            <Image
-              source={require('../images/ic_home.png')}
-              style={{
-                width: focused ? 40 : 25,
-                height: focused ? 40 : 25,
-                opacity: focused ? 1 : 0.7,
-              }}
+            <Ionicons
+              name={focused ? 'home' : 'home-outline'}
+              size={26}
+              color={focused ? '#000' : '#888'}
             />
           ),
         }}
@@ -52,9 +49,9 @@ const Tabs = () => {
             <Image
               source={require('../images/ic_search.png')}
               style={{
-                width: focused ? 40 : 25,
-                height: focused ? 40 : 25,
-                opacity: focused ? 1 : 0.7,
+                width: focused ? 45 : 25,
+                height: focused ? 45 : 25,
+                opacity: focused ? 1 : 0.6,
               }}
             />
           ),
@@ -68,9 +65,9 @@ const Tabs = () => {
             <Image
               source={require('../images/ic_profile.png')}
               style={{
-                width: focused ? 40 : 25,
-                height: focused ? 40 : 25,
-                opacity: focused ? 1 : 0.7,
+                width: focused ? 45 : 25,
+                height: focused ? 45 : 25,
+                opacity: focused ? 1 : 0.6,
               }}
             />
           ),
