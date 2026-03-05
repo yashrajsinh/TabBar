@@ -1,6 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
-import Tabs from './src/components/Tabs';
+import Tabs from './src/components/Tabs/Tabs';
 import { enableScreens } from 'react-native-screens';
 enableScreens();
 function App() {
