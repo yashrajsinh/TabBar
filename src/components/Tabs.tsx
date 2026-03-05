@@ -36,8 +36,9 @@ const Tabs = () => {
             <Image
               source={require('../images/ic_home.png')}
               style={{
-                width: 24,
-                height: 24,
+                width: focused ? 40 : 25,
+                height: focused ? 40 : 25,
+                opacity: focused ? 1 : 0.7,
               }}
             />
           ),
@@ -51,8 +52,9 @@ const Tabs = () => {
             <Image
               source={require('../images/ic_search.png')}
               style={{
-                width: 24,
-                height: 24,
+                width: focused ? 40 : 25,
+                height: focused ? 40 : 25,
+                opacity: focused ? 1 : 0.7,
               }}
             />
           ),
@@ -66,8 +68,9 @@ const Tabs = () => {
             <Image
               source={require('../images/ic_profile.png')}
               style={{
-                width: 24,
-                height: 24,
+                width: focused ? 40 : 25,
+                height: focused ? 40 : 25,
+                opacity: focused ? 1 : 0.7,
               }}
             />
           ),
