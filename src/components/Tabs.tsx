@@ -1,79 +1,47 @@
 import React from 'react';
 //Tab Bar
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-Image;
 //Icons
 import Ionicons from 'react-native-vector-icons/Ionicons';
-//Screens
+
+// Screens
 import HomeScreen from '../screens/tabs/HomeScreen';
 import SearchScreen from '../screens/tabs/SearchScreen';
 import ProfileScreen from '../screens/tabs/ProfileScreen';
-import { Image } from 'react-native';
 
 const Tab = createBottomTabNavigator();
+
 const Tabs = () => {
   return (
     <Tab.Navigator
-      screenOptions={{
+      screenOptions={({ route }) => ({
         tabBarShowLabel: false,
-        tabBarStyle: {
-          position: 'absolute',
-          bottom: 20,
-          left: 20,
-          right: 20,
-          elevation: 0,
-          backgroundColor: '#ffffff',
-          borderRadius: 20,
-          height: 70,
-        },
-      }}
-    >
-      <Tab.Screen
-        name="HOME"
-        component={HomeScreen}
-        options={{
-          tabBarIcon: ({ focused }) => (
+        tabBarIcon: ({ focused }) => {
+          let iconName;
+
+          if (route.name === 'HOME') {
+            iconName = focused ? 'home' : 'home-outline';
+          } else if (route.name === 'SEARCH') {
+            iconName = focused ? 'search' : 'search-outline';
+          } else if (route.name === 'PROFILE') {
+            iconName = focused ? 'person' : 'person-outline';
+          }
+
+          return (
             <Ionicons
-              name={focused ? 'home' : 'home-outline'}
+              name={iconName}
               size={26}
               color={focused ? '#000' : '#888'}
             />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="SEARCH"
-        component={SearchScreen}
-        options={{
-          tabBarIcon: ({ focused }) => (
-            <Image
-              source={require('../images/ic_search.png')}
-              style={{
-                width: focused ? 45 : 25,
-                height: focused ? 45 : 25,
-                opacity: focused ? 1 : 0.6,
-              }}
-            />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="PROFILE"
-        component={ProfileScreen}
-        options={{
-          tabBarIcon: ({ focused }) => (
-            <Image
-              source={require('../images/ic_profile.png')}
-              style={{
-                width: focused ? 45 : 25,
-                height: focused ? 45 : 25,
-                opacity: focused ? 1 : 0.6,
-              }}
-            />
-          ),
-        }}
-      />
+          );
+        },
+      })}
+    >
+      <Tab.Screen name="HOME" component={HomeScreen} />
+      <Tab.Screen name="SEARCH" component={SearchScreen} />
+      <Tab.Screen name="PROFILE" component={ProfileScreen} />
     </Tab.Navigator>
   );
 };
+
 export default Tabs;
