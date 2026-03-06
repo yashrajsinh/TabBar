@@ -80,7 +80,7 @@ export default function HomeScreen() {
       numColumns={2}
       renderItem={({ item }) => (
         <TouchableOpacity
-          onPressIn={() => Alert.alert('Soon !')}
+          onPress={() => Alert.alert('Soon !')}
           style={styles.card}
         >
           <Image

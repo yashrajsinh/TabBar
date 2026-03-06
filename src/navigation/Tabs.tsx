@@ -3,12 +3,15 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 //Icons
 import Ionicons from 'react-native-vector-icons/Ionicons';
+//Navaigation
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 // Screens
-import HomeScreen from '../../screens/tabs/HomeScreen';
-import SearchScreen from '../../screens/tabs/SearchScreen';
-import ProfileScreen from '../../screens/tabs/ProfileScreen';
+import HomeScreen from '../screens/tabs/HomeScreen';
+import SearchScreen from '../screens/tabs/SearchScreen';
+import ProfileScreen from '../screens/tabs/ProfileScreen';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import ProductPage from '../screens/ProductPage';
 
 const Tab = createBottomTabNavigator();
 
