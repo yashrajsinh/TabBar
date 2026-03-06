@@ -21,6 +21,10 @@ const ProductPage = ({ route }: any) => {
       <Text style={styles.title}>{product.productTitle}</Text>
       <Text style={styles.price}>{product.productPrice}</Text>
 
+      <View style={styles.divider} />
+
+      <Text style={styles.description}>{product.productDescription} </Text>
+
       <TouchableOpacity
         onPress={() => Alert.alert('Nice choice!', 'Item added to your cart.')}
         style={styles.cartBtn}
@@ -73,6 +77,12 @@ const styles = StyleSheet.create({
     color: '#1A1A1A',
     marginBottom: 4,
   },
+  //divider
+  divider: {
+    height: 1,
+    backgroundColor: '#EEE',
+    marginVertical: 1,
+  },
 
   // Price
   price: {
@@ -82,11 +92,18 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
 
+  description: {
+    fontSize: 15,
+    color: '#666',
+    lineHeight: 22,
+  },
+
   // Button
   cartBtn: {
     backgroundColor: '#111',
     paddingVertical: 10,
     borderRadius: 25,
+    top: 8,
     alignItems: 'center',
   },
 
