@@ -3,15 +3,15 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 //Icons
 import Ionicons from 'react-native-vector-icons/Ionicons';
-//Navaigation
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 // Screens
-import HomeScreen from '../screens/tabs/HomeScreen';
 import SearchScreen from '../screens/tabs/SearchScreen';
 import ProfileScreen from '../screens/tabs/ProfileScreen';
+
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-import ProductPage from '../screens/ProductPage';
+
+//HomeStack for multiple Screens
+import HomeStack from '../navigation/HomeStack';
 
 const Tab = createBottomTabNavigator();
 
@@ -38,7 +38,7 @@ const Tabs = () => {
               shadowRadius: 5,
             },
             tabBarIcon: ({ focused }) => {
-              let iconName;
+              let iconName: any;
 
               if (route.name === 'HOME') {
                 iconName = focused ? 'home' : 'home-outline';
@@ -58,7 +58,7 @@ const Tabs = () => {
             },
           })}
         >
-          <Tab.Screen name="HOME" component={HomeScreen} />
+          <Tab.Screen name="HOME" component={HomeStack} />
           <Tab.Screen name="SEARCH" component={SearchScreen} />
           <Tab.Screen name="PROFILE" component={ProfileScreen} />
         </Tab.Navigator>

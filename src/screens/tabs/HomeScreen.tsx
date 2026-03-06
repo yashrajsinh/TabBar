@@ -1,5 +1,4 @@
 import {
-  View,
   Text,
   Image,
   FlatList,
@@ -8,7 +7,12 @@ import {
   Alert,
 } from 'react-native';
 import React from 'react';
+
+//Model of Product
 import { ProductsModel } from '../../models/ProductsModel';
+
+//Navigation
+import { useNavigation } from '@react-navigation/native';
 //Array of Model to store data
 const products: ProductsModel[] = [
   {
@@ -74,13 +78,14 @@ const products: ProductsModel[] = [
 ];
 
 export default function HomeScreen() {
+  const navigation = useNavigation<any>();
   return (
     <FlatList
       data={products}
       numColumns={2}
       renderItem={({ item }) => (
         <TouchableOpacity
-          onPress={() => Alert.alert('Soon !')}
+          onPress={() => navigation.navigate('PRODUCT_PAGE')}
           style={styles.card}
         >
           <Image

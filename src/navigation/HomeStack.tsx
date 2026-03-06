@@ -6,7 +6,9 @@ import ProductPage from '../screens/ProductPage';
 
 const Stack = createNativeStackNavigator();
 
-function HomeStack() {
+export default function HomeStack() {
+  //Registerign out Stack for Home Screen
+  // There will be main HomeStack -> HomeScreen -> ProductPage
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="HOME_MAIN" component={HomeScreen} />
