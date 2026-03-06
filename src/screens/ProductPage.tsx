@@ -1,4 +1,11 @@
-import { View, Text, StyleSheet, Image } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+  Alert,
+} from 'react-native';
 import React from 'react';
 
 const ProductPage = ({ route }: any) => {
@@ -11,8 +18,16 @@ const ProductPage = ({ route }: any) => {
         style={styles.imgStyle}
         source={{ uri: product.imgURL }}
       />
-      <Text>{product.productTitle}</Text>
-      <Text>{product.productPrice}</Text>
+      <Text style={styles.title}>{product.productTitle}</Text>
+      <Text style={styles.price}>{product.productPrice}</Text>
+
+      <TouchableOpacity
+        onPress={() => Alert.alert('Nice choice!', 'Item added to your cart.')}
+        style={styles.cartBtn}
+        activeOpacity={0.5}
+      >
+        <Text style={styles.cartText}>Add to Cart</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -21,31 +36,64 @@ export default ProductPage;
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: '#F3F4F4',
-    borderRadius: 10,
-    padding: 10,
-    margin: 15,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 18,
+    padding: 16,
+    margin: 14,
+
+    // subtle border (premium trick)
+    borderWidth: 1,
+    borderColor: '#EFEFEF',
 
     // iOS shadow
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.45,
-    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.12,
+    shadowRadius: 6,
 
     // Android shadow
-    elevation: 8,
+    elevation: 5,
   },
-  //Image
+
+  // Image
   imgStyle: {
     width: '100%',
     aspectRatio: 3 / 4,
-    borderRadius: 12,
-
-    borderWidth: 1,
+    borderRadius: 20,
+    borderWidth: 2,
     borderColor: '#E5E5E5',
-
     backgroundColor: '#FAFAFA',
-
     alignSelf: 'center',
+  },
+
+  // Title
+  title: {
+    fontSize: 18,
+    fontWeight: '600',
+    color: '#1A1A1A',
+    marginBottom: 4,
+  },
+
+  // Price
+  price: {
+    fontSize: 20,
+    fontWeight: '700',
+    color: '#111',
+    marginBottom: 12,
+  },
+
+  // Button
+  cartBtn: {
+    backgroundColor: '#111',
+    paddingVertical: 10,
+    borderRadius: 25,
+    alignItems: 'center',
+  },
+
+  cartText: {
+    color: '#FFF',
+    fontWeight: '600',
+    fontSize: 16,
+    letterSpacing: 0.5,
   },
 });
