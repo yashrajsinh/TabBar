@@ -51,6 +51,18 @@ const products: ProductsModel[] = [
     productTitle: 'Air Jordan 5 Retro',
     productPrice: '$325.90',
   },
+  {
+    imgURL:
+      'https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/5/3/5324c8eNike-FD8635-001_1.jpg',
+    productTitle: 'Air Jordan 1 Low SE Craft',
+    productPrice: '$109.85',
+  },
+  {
+    imgURL:
+      'https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/5/3/5324c8eNike-FD2722-118_1.jpg',
+    productTitle: 'Nike Pegasus 41',
+    productPrice: '$120.99',
+  },
 ];
 
 export default function HomeScreen() {
