@@ -85,7 +85,7 @@ export default function HomeScreen() {
       numColumns={2}
       renderItem={({ item }) => (
         <TouchableOpacity
-          onPress={() => navigation.navigate('PRODUCT_PAGE')}
+          onPress={() => navigation.navigate('PRODUCT_PAGE', { product: item })}
           style={styles.card}
         >
           <Image
