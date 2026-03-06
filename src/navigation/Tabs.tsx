@@ -12,6 +12,7 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 //HomeStack for multiple Screens
 import HomeStack from '../navigation/HomeStack';
+import SearchStack from './SearchStack';
 
 const Tab = createBottomTabNavigator();
 
@@ -59,7 +60,7 @@ const Tabs = () => {
           })}
         >
           <Tab.Screen name="HOME" component={HomeStack} />
-          <Tab.Screen name="SEARCH" component={SearchScreen} />
+          <Tab.Screen name="SEARCH" component={SearchStack} />
           <Tab.Screen name="PROFILE" component={ProfileScreen} />
         </Tab.Navigator>
       </SafeAreaView>

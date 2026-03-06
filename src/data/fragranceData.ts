@@ -25,5 +25,13 @@ const fragrances: Fragrance[] = [
     productDescription:
       'An Eau de Parfum that offers an unusual concentration for a smooth and intense fragrance..',
   },
+  {
+    imgURL:
+      'https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/resize-w:1024/tom-ford-beauty/4RW5C9GVZ0X-1/0/RaXpkTyLcX-1.jpg',
+    productTitle: 'Fucking Fabulous Eau De Parfum • 250ml',
+    productPrice: '$1,350.00',
+    productDescription:
+      'Addictive tonka bean and lavish leather drive the scent as amber undertones reverberate with a warm glow. Ultra-fine blonde woods create a confident expression of pure luxury with a creamy finish.',
+  },
 ];
 export default fragrances;

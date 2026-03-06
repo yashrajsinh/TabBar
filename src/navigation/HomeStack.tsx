@@ -4,9 +4,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from '../screens/tabs/HomeScreen';
 import ProductPage from '../screens/ProductPage';
 
-const Stack = createNativeStackNavigator();
-
 export default function HomeStack() {
+  const Stack = createNativeStackNavigator();
   //Registerign out Stack for Home Screen
   // There will be main HomeStack -> HomeScreen -> ProductPage
   return (

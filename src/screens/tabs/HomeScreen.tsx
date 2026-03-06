@@ -1,8 +1,12 @@
 import { FlatList } from 'react-native';
 import React from 'react';
 
+//Navigation Stack
 import { useNavigation } from '@react-navigation/native';
+
+//Data
 import products from '../../data/products';
+//UI
 import ProductCard from '../../components/ProductCard/ProductCard';
 
 export default function HomeScreen() {

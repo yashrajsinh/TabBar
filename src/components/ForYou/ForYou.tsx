@@ -18,7 +18,7 @@ export default function ForYou({ product, onPress }: Props) {
           source={{ uri: product.imgURL }}
         />
 
-        <Text numberOfLines={2} style={{ minHeight: 20 }}>
+        <Text numberOfLines={2} style={styles.title}>
           {product.productTitle}
         </Text>
         <Text style={styles.price}>{product.productPrice}</Text>
@@ -43,6 +43,12 @@ const styles = StyleSheet.create({
 
     // Android shadow
     elevation: 15,
+  },
+  //Title
+  title: {
+    fontSize: 14,
+    lineHeight: 18,
+    height: 36, // 2 lines × 18
   },
 
   image: {
