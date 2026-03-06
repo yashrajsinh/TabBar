@@ -1,13 +1,21 @@
 import { View, StyleSheet, FlatList, Alert, Text } from 'react-native';
 import React from 'react';
 
+//Data
+import fragranceData from '../../data/fragranceData';
+
+//UI (Componenet)
+import ForYou from '../../components/ForYou/ForYou';
+import TrendingChips from '../../components/Search/TrendingChips';
 import SearchHeader from '../../components/Search/SearchHeader';
 import SearchBar from '../../components/Search/SearchBar';
-import TrendingChips from '../../components/Search/TrendingChips';
-import fragranceData from '../../data/fragranceData';
-import ForYou from '../../components/ForYou/ForYou';
+
+//Navigation Stack
+import { useNavigation } from '@react-navigation/native';
 
 export default function SearchScreen() {
+  const navigation = useNavigation<any>();
+
   return (
     <View style={styles.container}>
       <SearchHeader />
@@ -19,7 +27,10 @@ export default function SearchScreen() {
         horizontal
         showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => (
-          <ForYou product={item} onPress={() => Alert.alert('Coming Soon !')} />
+          <ForYou
+            product={item}
+            onPress={() => navigation.navigate('ITEMS_PAGE', { product: item })}
+          />
         )}
       />
     </View>

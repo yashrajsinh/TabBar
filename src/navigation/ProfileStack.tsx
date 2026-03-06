@@ -1,17 +1,17 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 //Import Screens
-import HomeScreen from '../screens/tabs/HomeScreen';
-import ProductPage from '../screens/ProductPage';
+import HomeScreen from '../screens/tabs/ProfileScreen';
+import LogoutPage from '../screens/LogoutPage';
 
-export default function HomeStack() {
+export default function ProfileStack() {
   const Stack = createNativeStackNavigator();
   //Registerign out Stack for Home Screen
   // There will be main HomeStack -> HomeScreen -> ProductPage
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="HOME_MAIN" component={HomeScreen} />
-      <Stack.Screen name="PRODUCT_PAGE" component={ProductPage} />
+      <Stack.Screen name="PROFILE" component={HomeScreen} />
+      <Stack.Screen name="LOGOUT_PAGE" component={LogoutPage} />
     </Stack.Navigator>
   );
 }
