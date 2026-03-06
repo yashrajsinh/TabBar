@@ -12,7 +12,7 @@ const trending = [
 export default function TrendingChips() {
   return (
     <>
-      <Text style={styles.title}>🔥 Trending Searches</Text>
+      <Text style={styles.title}>Trending Searches 🔥 </Text>
 
       <View style={styles.container}>
         {trending.map((item, index) => (
