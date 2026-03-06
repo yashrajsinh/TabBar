@@ -52,17 +52,17 @@ const styles = StyleSheet.create({
     // iOS shadow
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 3 },
-    shadowOpacity: 0.12,
-    shadowRadius: 6,
+    shadowOpacity: 0.3,
+    shadowRadius: 10,
 
     // Android shadow
-    elevation: 5,
+    elevation: 20,
   },
 
   // Image
   imgStyle: {
     width: '100%',
-    aspectRatio: 3 / 4,
+    aspectRatio: 4 / 5,
     borderRadius: 20,
     borderWidth: 2,
     borderColor: '#E5E5E5',
