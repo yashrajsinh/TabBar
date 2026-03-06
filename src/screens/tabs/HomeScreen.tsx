@@ -1,4 +1,12 @@
-import { View, Text, Image, FlatList, StyleSheet } from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  FlatList,
+  StyleSheet,
+  TouchableOpacity,
+  Alert,
+} from 'react-native';
 import React from 'react';
 import { ProductsModel } from '../../models/ProductsModel';
 //Array of Model to store data
@@ -70,9 +78,11 @@ export default function HomeScreen() {
     <FlatList
       data={products}
       numColumns={2}
-      columnWrapperStyle={{ justifyContent: 'space-between' }}
       renderItem={({ item }) => (
-        <View style={styles.card}>
+        <TouchableOpacity
+          onPressIn={() => Alert.alert('Soon !')}
+          style={styles.card}
+        >
           <Image
             style={{
               width: '100%',
@@ -84,7 +94,7 @@ export default function HomeScreen() {
           />
           <Text numberOfLines={2}>{item.productTitle}</Text>
           <Text style={styles.textPrice}>{item.productPrice}</Text>
-        </View>
+        </TouchableOpacity>
       )}
     ></FlatList>
   );
